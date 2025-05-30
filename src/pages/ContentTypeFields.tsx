@@ -312,7 +312,7 @@ const ContentTypeFields = () => {
             <FormControl fullWidth margin="normal">
               <InputLabel>Type</InputLabel>
               <Select
-                value={formValues.type}
+                value={formValues.type as FieldType ?? 'text'}
                 onChange={(e) => setFormValues({ ...formValues, type: e.target.value as FieldType })}
                 label="Type"
               >

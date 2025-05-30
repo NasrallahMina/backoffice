@@ -201,7 +201,7 @@ const ContentItems = () => {
       id: editingField?.id || Date.now().toString(),
       name: fieldFormValues.name || '',
       label: fieldFormValues.label || '',
-      type: fieldFormValues.type || 'text',
+      type: fieldFormValues.type as import('../types/content').FieldType || 'text',
       required: fieldFormValues.required || false,
       options: fieldFormValues.options,
       order: fieldFormValues.order || 0,
@@ -718,8 +718,8 @@ const ContentItems = () => {
             <FormControl fullWidth margin="normal">
               <InputLabel>Type</InputLabel>
               <Select
-                value={fieldFormValues.type || 'text'}
-                onChange={(e) => setFieldFormValues({ ...fieldFormValues, type: e.target.value })}
+                value={fieldFormValues.type as import('../types/content').FieldType ?? 'text'}
+                onChange={(e) => setFieldFormValues({ ...fieldFormValues, type: e.target.value as import('../types/content').FieldType })}
                 label="Type"
               >
                 <MenuItem value="text">Text</MenuItem>

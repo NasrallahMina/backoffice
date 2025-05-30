@@ -5,7 +5,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import { AuthProvider, useAuth } from './contexts/AuthContext';
 import Layout from './components/Layout';
 import Login from './pages/Login';
-import Dashboard from './pages/Dashboard';
+import Home from './pages/Home';
 import ContentTypes from './pages/ContentTypes';
 import ContentItems from './pages/ContentItems';
 import ContentItemEditor from './pages/ContentItemEditor';
@@ -42,7 +42,7 @@ const App: React.FC = () => {
                 </PrivateRoute>
               }
             >
-              <Route index element={<Dashboard />} />
+              <Route index element={<Home />} />
               <Route path="content-types" element={<ContentTypes />} />
               <Route path="content-types/:id" element={<ContentItems />} />
               <Route path="content-types/:id/items/:itemId" element={<ContentItemEditor />} />
